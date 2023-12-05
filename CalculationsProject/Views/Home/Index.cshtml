@@ -1,0 +1,48 @@
+﻿@model List<ModelsLayer.Console_>;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<table class="table">
+    
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>Núm. Controles</th>
+            <th>Juegos</th>
+            <th>Disponibilidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.id </th>
+                <th>@item.Marca </th>
+                <th>@item.Model </th>
+                <th>@item.Year </th>
+                <th>@item.Controls</th>
+                <th>@foreach (var game in item.lsGames)
+                    {
+                        <ul>@game</ul>
+                    } 
+                    </th>
+                <th>
+                    @if (@item.Available)
+                    {
+                        <p>Sí</p>
+                    }else
+                    {
+                        <p>No</p>
+                    }
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+
