@@ -38,5 +38,12 @@ namespace CalculationsProject.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public static string testingStr()
+        {
+            int A = 80 + 50;
+
+            return "Comidas "+ A;
+        }
     }
 }
